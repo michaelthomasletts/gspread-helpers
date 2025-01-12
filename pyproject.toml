@@ -18,8 +18,8 @@ keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
 repository = "https://github.com/michaelthomasletts/gspread-helpers"
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 version = "0.0.0"
@@ -30,14 +30,6 @@ black = "^24.10.0"
 isort = "^5.13.2"
 flake8 = "^7.1.1"
 pre-commit = "^4.0.1"
-
-[tool.poetry.requires-plugins]
-poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-style = "pep440"
 
 [tool.pytest.ini_options]
 markers = ["exceptions", "functions", "imports"]
