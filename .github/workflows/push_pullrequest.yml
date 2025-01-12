@@ -31,7 +31,7 @@ jobs:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
       # install dependencies if cache does not exist
       - name: Install dependencies
-        # if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != "true"
         run: poetry install --no-interaction --no-root
       # install your root project, if required
       - name: Install project
@@ -41,7 +41,11 @@ jobs:
         run: |
           source .venv/bin/activate
           pytest tests/
-      - name: Lint
+      # autoformat with black
+      - name: Autoformat with black
         uses: rickstaa/action-black@v1
         with:
           black_args: ". --check"
+      # lint with flake8
+      - name: Lint with flake8
+        uses: py-actions/flake8@v2          
