@@ -1,6 +1,16 @@
 from pytest import mark
 
-from gspread_helpers.range_name.range_name import RangeName
+from gspread_helpers import (
+    EXCEL_COL_LIMIT,
+    EXCEL_ROW_LIMIT,
+    GOOGLE_SHEETS_COL_LIMIT,
+    GOOGLE_SHEETS_ROW_LIMIT,
+    RangeName,
+)
+from gspread_helpers.range_name.exceptions import (
+    ColumnLimitExceeded,
+    RowLimitExceeded,
+)
 
 
 @mark.imports
@@ -70,7 +80,20 @@ def test_misc_imports():
 def test_rows():
     try:
         rn = RangeName(rows=1, cols=0)
+        raise Exception
     except ValueError:
+        ...
+
+    try:
+        rn = RangeName(rows=GOOGLE_SHEETS_ROW_LIMIT + 1, cols=1)
+        raise Exception
+    except RowLimitExceeded:
+        ...
+
+    try:
+        rn = RangeName(rows=EXCEL_ROW_LIMIT + 1, cols=1, source="excel")
+        raise Exception
+    except RowLimitExceeded:
         ...
 
 
@@ -78,7 +101,20 @@ def test_rows():
 def test_cols():
     try:
         rn = RangeName(rows=0, cols=1)
+        raise Exception
     except ValueError:
+        ...
+
+    try:
+        rn = RangeName(rows=1, cols=GOOGLE_SHEETS_COL_LIMIT + 1)
+        raise Exception
+    except ColumnLimitExceeded:
+        ...
+
+    try:
+        rn = RangeName(rows=1, cols=EXCEL_COL_LIMIT + 1, source="excel")
+        raise Exception
+    except ColumnLimitExceeded:
         ...
 
 
@@ -95,6 +131,7 @@ def test_source():
 
     try:
         rn = RangeName(rows=1, cols=1, source="test")
+        raise Exception
     except ValueError:
         ...
 
@@ -127,9 +164,9 @@ def test_buffer():
 
     try:
         rn = RangeName(rows=1, cols=1, buffer=())
+        raise Exception
     except ValueError:
-        return
-    raise Exception
+        ...
 
 
 @mark.functions
