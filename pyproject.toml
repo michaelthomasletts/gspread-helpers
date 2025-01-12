@@ -1,0 +1,55 @@
+[project]
+name = "gspread-helpers"
+authors = [
+  {name="Michael Letts", email="lettsmt@gmail.com"},
+]
+maintainers = [
+  {name="Michael Letts", email="lettsmt@gmail.com"},
+]
+requires-python = ">=3.12"
+dependencies = ["attrs (>=24.3.0,<25.0.0)"]
+description = "A simple Python package which provides supplementary helper methods for gspread."
+readme = "README.md"
+dynamic = ["version"]
+license = { text = "MIT" }
+keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
+
+[project.urls]
+repository = "https://github.com/michaelthomasletts/gspread-helpers"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry]
+version = "0.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^24.10.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+pre-commit = "^4.0.1"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[tool.pytest.ini_options]
+markers = ["exceptions", "functions", "imports"]
+
+[tool.black]
+line-length = 79
+target-version = ["py312"]
+verbose = true
+
+[tool.isort]
+line_length = 79
+ensure_newline_before_comments = true
+use_parentheses = true
+include_trailing_comma = true
+multi_line_output = 3
