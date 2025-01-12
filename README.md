@@ -3,22 +3,21 @@
 [![Workflow](https://img.shields.io/github/actions/workflow/status/michaelthomasletts/gspread-helpers/push_pullrequest.yml?logo=github)](https://github.com/michaelthomasletts/gspread-helpers/actions/workflows/push_pullrequest.yml)
 ![Python Version](https://img.shields.io/pypi/pyversions/gspread-helpers?style=pypi)
 
-Overview
-========
+## Overview
 
 A simple Python package which provides supplementary helper methods for [gspread](https://github.com/burnash/gspread).
 
-Presently, this package includes a single function for generating range names for updating worksheets in Google Sheets, e.g. 'A1:41209'. In the future, however, the intention is that additional methods will also be introduced.
+## Features
+- `gspread_helpers.RangeName` method for automatically generating dynamic range names, e.g. "A1:R455"
 
-Installation
-============
+## Installation
 
 ```bash
 $ pip install gspread-helpers
 ```
 
-Directory
-=========
+## Directory
+
 ```
 gspread_helpers
 ├── __init__.py
@@ -29,8 +28,7 @@ gspread_helpers
     └── validations.py
 ```
 
-Usage
-=====
+## Usage
 
 The row limit for range names in Microsoft Excel is, by default, 1,048,576. Below, we override that limitation using the `override_col_limit` argument set to `True` and by setting `source` equal to 'excel'.
 
@@ -59,6 +57,6 @@ Modulating the `header_rows_size` argument looks like this.
 rn = RangeName(rows=2, cols=2, header_rows_size=2)
 ```
 
-Contributing
-============
+## Contributing
+
 Please refer to [contributing.md](https://github.com/michaelthomasletts/gspread-helpers/blob/main/docs/contributing.md) for step by step instructions for contributing to this project and understanding the coding standards before opening a pull request.
