@@ -56,4 +56,4 @@ rn = RangeName(rows=2, cols=2, header_rows_size=2)
 
 Contributing
 ============
-Please refer to [contributing.md](docs/contributing.md) for step by step instructions for contributing to this project and understanding the coding standards before opening a pull request.
+Please refer to [contributing.md](https://github.com/michaelthomasletts/gspread-helpers/blob/main/docs/contributing.md) for step by step instructions for contributing to this project and understanding the coding standards before opening a pull request.
