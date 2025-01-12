@@ -13,6 +13,7 @@ exclude =
     dist/*
 extend-ignore =
     E501
+    F404
 max-line-length = 79
 per-file-ignores = 
     */__init__.py:F401

@@ -4,6 +4,7 @@ __all__ = [
     "GOOGLE_SHEETS_COL_LIMIT",
     "EXCEL_COL_LIMIT",
 ]
+from __future__ import annotations
 
 from typing import Type
 
