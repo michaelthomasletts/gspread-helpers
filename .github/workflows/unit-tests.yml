@@ -21,7 +21,4 @@ jobs:
           pip install pytest  
       - name: Run unit tests
         run: |  
-          coverage run -m pytest -v -s  
-      - name: Generate Coverage Report  
-        run: |  
-          coverage report -m
+          pytest -v -s
