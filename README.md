@@ -1,6 +1,6 @@
 # gspread_helpers
-[![PyPI Download](https://img.shields.io/pypi/v/gspread-helpers?logo=pypis.io/pypi/v/pandas.svg)](https://pypi.org/project/gspread-helpers/)
-![main workflow](https://img.shields.io/github/actions/workflow/status/michaelthomasletts/gspread-helpers/push_pullrequest.yml?logo=github)
+[![PyPI Download](https://img.shields.io/pypi/v/gspread-helpers?logo=pypis.svg)](https://pypi.org/project/gspread-helpers/)
+[![Workflow](https://img.shields.io/github/actions/workflow/status/michaelthomasletts/gspread-helpers/push_pullrequest.yml?logo=github)](https://github.com/michaelthomasletts/gspread-helpers/actions/workflows/push_pullrequest.yml)
 ![Python Version](https://img.shields.io/pypi/pyversions/gspread-helpers?style=pypi)
 
 Overview
