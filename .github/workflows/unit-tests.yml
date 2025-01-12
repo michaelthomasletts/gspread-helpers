@@ -17,9 +17,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Poetry
         uses: snok/install-poetry@v1        
-      - name: Install dependencies  
-        run: |  
-          poetry install --no-interaction --no-root
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+      - name: Install project
+        run: poetry install --no-interaction
       - name: Run unit tests
-        run: |  
-          pytest tests/ -v -s
+        run: pytest tests/ -v -s
