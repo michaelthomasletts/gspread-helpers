@@ -40,8 +40,8 @@ def _validate_rows_arg(
                 else EXCEL_ROW_LIMIT
             )
 
-    if (value + instance.header_rows_size) > rows_limit:
-        message = f"The row limit of {rows_limit} was exceeded by {value - rows_limit} rows!"
+    if (_value := value + instance.header_rows_size) > rows_limit:
+        message = f"The row limit of {rows_limit} was exceeded by {_value - rows_limit} rows!"
         raise RowLimitExceeded(message) from None
 
 
