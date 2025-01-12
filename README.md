@@ -57,6 +57,19 @@ Modulating the `header_rows_size` argument looks like this.
 rn = RangeName(rows=2, cols=2, header_rows_size=2)
 ```
 
+Finally, if we want to buffer the range name beginning from 'B', we may do
+this.
+
+```python
+rn = RangeName(rows=2, cols=2, buffer=1)
+```
+
+Passing 'B' to `buffer` is equivalent to passing 1.
+
+```python
+rn = RangeName(rows=2, cols=2, buffer="B")
+```
+
 ## Contributing
 
 Please refer to [contributing.md](https://github.com/michaelthomasletts/gspread-helpers/blob/main/docs/contributing.md) for step by step instructions for contributing to this project and understanding the coding standards before opening a pull request.
