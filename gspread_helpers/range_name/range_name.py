@@ -101,16 +101,7 @@ class RangeName:
 
     @property
     def range_name(self) -> str:
-        prefix = "".join(
-            [
-                "A",
-                str(
-                    1 + self.header_rows_size
-                    if self.header_rows_size > 0
-                    else 1
-                ),
-            ]
-        )
+        prefix = "".join(["A", str(1 + self.header_rows_size)])
         suffix, num_cols = "", self.cols
 
         while num_cols > 0:
