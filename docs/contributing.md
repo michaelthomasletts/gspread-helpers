@@ -4,7 +4,7 @@ Standards
 All contributions must satisfy the following criteria in order to be reviewed and merged:
 
 1. Proposed changes must logically relate to `gspread` or worksheets in Google Sheets, Microsoft Excel, or other spreadsheet-like software.
-2. Proposed changes must be tested _scrupulously_ with documented tests in `tests/`.
+2. Proposed changes must be tested with documented tests in `tests/` _before_ pushing to git.
 3. The `__all__` double-underscore object must be included at the head of `__init__` and all relevant modules.
 4. Proposed changes to `README.md`, `contributions.md`, and `tool.poetry.group.dev.dependencies` must be defended with solid rationale.
 5. Object names must be logical, mature, and respectful, i.e. no prejoratives, expletives, etc., as well as sensible and in accordance with PEP standards.
