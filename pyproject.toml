@@ -6,13 +6,13 @@ authors = [
 maintainers = [
   {name="Michael Letts", email="lettsmt@gmail.com"},
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = ["attrs (>=24.3.0,<25.0.0)"]
 description = "A simple Python package which provides supplementary helper methods for gspread."
 readme = "README.md"
 license = { text = "MIT" }
 keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
-version = "0.0.8"
+version = "0.0.9"
 
 [project.urls]
 repository = "https://github.com/michaelthomasletts/gspread-helpers"
@@ -33,7 +33,7 @@ markers = ["exceptions", "functions", "imports"]
 
 [tool.black]
 line-length = 79
-target-version = ["py312"]
+target-version = ["py310"]
 verbose = true
 
 [tool.isort]
