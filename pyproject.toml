@@ -13,6 +13,7 @@ readme = "README.md"
 dynamic = ["version"]
 license = { text = "MIT" }
 keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
+version = "0.0.2"
 
 [project.urls]
 repository = "https://github.com/michaelthomasletts/gspread-helpers"
@@ -20,9 +21,6 @@ repository = "https://github.com/michaelthomasletts/gspread-helpers"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
-version = "0.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
