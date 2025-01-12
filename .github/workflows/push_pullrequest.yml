@@ -40,7 +40,7 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate
-          pytest tests/
+          pytest tests/ -v
       # autoformat with black
       - name: Autoformat with black
         uses: rickstaa/action-black@v1
