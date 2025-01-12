@@ -1,6 +1,6 @@
 __all__ = []
 
-from .range_name import __all__ as range_name_all
+from . import range_name
 from .range_name.range_name import RangeName
 from .range_name.validations import (
     EXCEL_COL_LIMIT,
@@ -10,4 +10,4 @@ from .range_name.validations import (
 )
 
 __all__.append("range_name")
-__all__.extend(range_name_all)
+__all__.extend(range_name.__all__)
