@@ -12,9 +12,10 @@ jobs:
         id: setup-python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'        
+          python-version: "3.12"
       - name: Setup black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
+          src: "./gspread-helpers"
           use_pyproject: true
