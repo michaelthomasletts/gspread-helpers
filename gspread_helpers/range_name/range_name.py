@@ -96,9 +96,6 @@ class RangeName:
     override_row_limit: bool = field(default=False)
     override_col_limit: bool = field(default=False)
 
-    def __attrs_post_init__(self):
-        self.rows += self.header_rows_size
-
     @property
     def range_name(self) -> str:
         prefix = "".join(["A", str(1 + self.header_rows_size)])
@@ -108,6 +105,6 @@ class RangeName:
             num_cols, remainder = divmod(num_cols - 1, 26)
             suffix = "".join([chr(65 + remainder), suffix])
 
-        suffix = "".join([suffix, str(self.rows)])
+        suffix = "".join([suffix, str(self.rows + self.header_rows_size)])
 
         return ":".join([prefix, suffix])
