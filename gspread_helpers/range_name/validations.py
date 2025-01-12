@@ -33,25 +33,19 @@ def _validate_buffer(
         non-alphabetical.
     """
 
-    try:
-        assert isinstance(value, str) or isinstance(value, int)
-    except AssertionError:
+    if not (isinstance(value, str) or isinstance(value, int)):
         raise ValueError(
             f"buffer must be <type 'int'> or <type 'str'> but <type '{type(value)}'> was provided"
         )
 
     match isinstance(value, int):
         case True:
-            try:
-                assert value >= 0
-            except AssertionError:
+            if not value >= 0:
                 raise ValueError(
                     "buffer must be greater than or equal to zero"
                 )
         case False:
-            try:
-                assert value.isalpha()
-            except AssertionError:
+            if not value.isalpha():
                 raise ValueError(
                     "buffer must only include alphabetical characters"
                 )
