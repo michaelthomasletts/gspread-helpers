@@ -30,9 +30,11 @@ def _validate_rows_arg(
         the GOOGLE_SHEETS_ROW_LIMIT and EXCEL_ROW_LIMIT constants.
     """
 
+    _value = value + instance.header_rows_size
+
     match instance.override_row_limit:
         case True:
-            rows_limit = value
+            rows_limit = _value
         case False:
             rows_limit = (
                 GOOGLE_SHEETS_ROW_LIMIT
@@ -40,7 +42,7 @@ def _validate_rows_arg(
                 else EXCEL_ROW_LIMIT
             )
 
-    if (_value := value + instance.header_rows_size) > rows_limit:
+    if _value > rows_limit:
         message = f"The row limit of {rows_limit} was exceeded by {_value - rows_limit} rows!"
         raise RowLimitExceeded(message) from None
 
