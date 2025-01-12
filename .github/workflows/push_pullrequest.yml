@@ -48,4 +48,6 @@ jobs:
           black_args: ". --check"
       # lint with flake8
       - name: Lint with flake8
-        uses: py-actions/flake8@v2          
+        uses: py-actions/flake8@v2
+        with:
+          args: "--config=.flake8"
