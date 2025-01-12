@@ -13,7 +13,7 @@ readme = "README.md"
 dynamic = ["version"]
 license = { text = "MIT" }
 keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
-version = "0.0.3"
+version = "0.0.4"
 
 [project.urls]
 repository = "https://github.com/michaelthomasletts/gspread-helpers"

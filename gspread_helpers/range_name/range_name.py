@@ -1,6 +1,6 @@
-__all__ = ["RangeName"]
-
 from __future__ import annotations
+
+__all__ = ["RangeName"]
 
 from attrs import define, field
 from attrs.validators import ge, in_, instance_of, optional

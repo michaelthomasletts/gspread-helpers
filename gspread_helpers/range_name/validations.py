@@ -1,10 +1,11 @@
+from __future__ import annotations
+
 __all__ = [
     "GOOGLE_SHEETS_ROW_LIMIT",
     "EXCEL_ROW_LIMIT",
     "GOOGLE_SHEETS_COL_LIMIT",
     "EXCEL_COL_LIMIT",
 ]
-from __future__ import annotations
 
 from typing import Type
 
