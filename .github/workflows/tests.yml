@@ -1,4 +1,4 @@
-name: Run unit tests
+name: Run unit tests, lint, etc.
 
 on: [push, pull_request]
 
@@ -41,3 +41,5 @@ jobs:
         run: |
           source .venv/bin/activate
           pytest tests/
+      - name: Run black
+        run: black --check --verbose .
