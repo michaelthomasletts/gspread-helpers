@@ -9,6 +9,8 @@ __all__ = [
 
 from typing import Type
 
+from attrs import Attribute
+
 from .exceptions import ColumnLimitExceeded, RowLimitExceeded
 
 GOOGLE_SHEETS_ROW_LIMIT = 10_000_000
@@ -17,8 +19,46 @@ GOOGLE_SHEETS_COL_LIMIT = 18_278
 EXCEL_COL_LIMIT = 16_384
 
 
+def _validate_buffer(
+    instance: Type["RangeName"], attribute: Type[Attribute], value: int
+):
+    """Validates that the buffer attribute is of type str or int, and that, if
+    int, the value must be greater than or equal to zero, and, if str, the value
+    must be alphabetical.
+
+    Raises
+    ------
+    ValueError : Exception
+        Raised if buffer is not of type int or str, or if less than zero or
+        non-alphabetical.
+    """
+
+    try:
+        assert isinstance(value, str) or isinstance(value, int)
+    except AssertionError:
+        raise ValueError(
+            f"buffer must be <type 'int'> or <type 'str'> but <type '{type(value)}'> was provided"
+        )
+
+    match isinstance(value, int):
+        case True:
+            try:
+                assert value >= 0
+            except AssertionError:
+                raise ValueError(
+                    "buffer must be greater than or equal to zero"
+                )
+        case False:
+            try:
+                assert value.isalpha()
+            except AssertionError:
+                raise ValueError(
+                    "buffer must only include alphabetical characters"
+                )
+
+
 def _validate_rows_arg(
-    instance: Type["RangeName"], attribute: Type["Attribute"], value: int
+    instance: Type["RangeName"], attribute: Type[Attribute], value: int
 ):
     """Validates that the rows argument does not exceed platform limits per
     the source and override_row_limit arguments.
@@ -48,7 +88,7 @@ def _validate_rows_arg(
 
 
 def _validate_cols_arg(
-    instance: Type["RangeName"], attribute: Type["Attribute"], value: int
+    instance: Type["RangeName"], attribute: Type[Attribute], value: int
 ):
     """Validates that the cols argument does not exceed platform limits per
     the source and override_col_limit arguments.

@@ -2,10 +2,16 @@ from __future__ import annotations
 
 __all__ = ["RangeName"]
 
+from typing import Union
+
 from attrs import define, field
 from attrs.validators import ge, in_, instance_of, optional
 
-from .validations import _validate_cols_arg, _validate_rows_arg
+from .validations import (
+    _validate_buffer,
+    _validate_cols_arg,
+    _validate_rows_arg,
+)
 
 
 @define
@@ -34,6 +40,10 @@ class RangeName:
         header in the worksheet then use this parameter to indicate how large
         the header is, in terms of number of rows. Value must be equal to or
         greater than zero. Default is 0.
+    buffer : int | str, optional
+        If you do not want to construct the range name beginning from the letter
+        'A' then provide an integer or alphabetical letter that corresponds to the
+        position with which you intend to begin constructing the range name.
     source : ('google_sheets', 'excel'), optional
         Default is 'google_sheets'.
     override_row_limit : bool, optional
@@ -80,12 +90,26 @@ class RangeName:
 
     >>> rn = RangeName(rows=2, cols=2, header_rows_size=2)
     'A3:B4'
+
+    Finally, if we want to buffer the range name beginning from 'B', we may do
+    this.
+
+    >>> rn = RangeName(rows=2, cols=2, buffer=1)
+    'B1:C2'
+
+    Passing 'B' to `buffer` is equivalent to passing 1.
+
+    >>> rn = RangeName(rows=2, cols=2, buffer="B")
+    'B1:C2'
     """
 
     rows: int = field(validator=[instance_of(int), ge(1), _validate_rows_arg])
     cols: int = field(validator=[instance_of(int), ge(1), _validate_cols_arg])
     header_rows_size: int = field(
         default=0, validator=optional([instance_of(int), ge(0)])
+    )
+    buffer: Union[int | str] = field(
+        default=0, validator=optional([_validate_buffer])
     )
     source: str = field(
         default="google_sheets",
@@ -96,13 +120,41 @@ class RangeName:
     override_row_limit: bool = field(default=False)
     override_col_limit: bool = field(default=False)
 
+    def __post_init_attrs__(self):
+        self.buffer = (
+            self.buffer.upper()
+            if isinstance(self.buffer, str)
+            else self.buffer
+        )
+
     @property
     def range_name(self) -> str:
-        prefix = "".join(["A", str(1 + self.header_rows_size)])
+        # creating prefix
+        match (buffer_is_str := isinstance(self.buffer, str)):
+            case True:
+                prefix = self.buffer
+            case False:
+                prefix, _buffer = "", self.buffer
+                while _buffer > 0:
+                    _buffer, remainder = divmod(_buffer, 26)
+                    prefix = "".join([chr(65 + remainder), prefix])
+
+        prefix = "".join(
+            [prefix if prefix else "A", str(1 + self.header_rows_size)]
+        )
+
+        # creating suffix
         suffix, num_cols = "", self.cols
+        match buffer_is_str:
+            case True:
+                _buffer = 0
+                for letter in self.buffer:
+                    _buffer = _buffer * 26 + (ord(letter) - ord("A"))
+            case False:
+                _buffer = self.buffer
 
         while num_cols > 0:
-            num_cols, remainder = divmod(num_cols - 1, 26)
+            num_cols, remainder = divmod(num_cols - 1 + _buffer, 26)
             suffix = "".join([chr(65 + remainder), suffix])
 
         suffix = "".join([suffix, str(self.rows + self.header_rows_size)])

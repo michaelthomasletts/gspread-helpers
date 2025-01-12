@@ -111,44 +111,58 @@ def test_override_row_limit():
     assert rn.override_row_limit is False
 
 
+@mark.exceptions
+def test_buffer():
+    rn = RangeName(rows=2, cols=2, buffer=2)
+    assert rn.range_name == "C1:D2"
+
+    rn = RangeName(rows=2, cols=2, buffer="C")
+    assert rn.range_name == "C1:D2"
+
+    rn = RangeName(rows=2, cols=2, header_rows_size=1, buffer=2)
+    assert rn.range_name == "C2:D3"
+
+    rn = RangeName(rows=2, cols=2, header_rows_size=1, buffer="C")
+    assert rn.range_name == "C2:D3"
+
+    try:
+        rn = RangeName(rows=1, cols=1, buffer=())
+    except ValueError:
+        return
+    raise Exception
+
+
 @mark.functions
 def test_range_name():
     # testing basic functionality
-    correct_range_name = "A1:B2"
     range_name = RangeName(rows=2, cols=2)
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:B2"
 
     # testing basic functionality with an IRL example
     df = [[0, 1], [1, 2], [5, 10]]
-    correct_range_name = "A1:B3"
     range_name = RangeName(rows=len(df), cols=len(df[0]))
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:B3"
 
     # testing header_rows_size
-    correct_range_name = "A3:B4"
     range_name = RangeName(rows=2, cols=2, header_rows_size=2)
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A3:B4"
 
     # testing override row limit for Google Sheets
-    correct_range_name = "A1:B10000001"
     range_name = RangeName(rows=10_000_001, cols=2, override_row_limit=True)
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:B10000001"
 
     # testing override col limit for Google Sheets
-    correct_range_name = "A1:BUYB2"
     range_name = RangeName(rows=2, cols=50_000, override_col_limit=True)
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:BUYB2"
 
     # testing override row limit for Excel
-    correct_range_name = "A1:B10000001"
     range_name = RangeName(
         rows=10_000_001, cols=2, override_row_limit=True, source="excel"
     )
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:B10000001"
 
     # testing override col limit for Excel
-    correct_range_name = "A1:BGQCZ2"
     range_name = RangeName(
         rows=2, cols=1_048_580, override_col_limit=True, source="excel"
     )
-    assert correct_range_name == range_name.range_name
+    assert range_name.range_name == "A1:BGQCZ2"
