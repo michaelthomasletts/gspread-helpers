@@ -1,0 +1,14 @@
+name: Lint with black
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Setup black
+        uses: psf/black@stable
+        with:
+          use_pyproject: true
