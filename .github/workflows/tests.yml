@@ -41,5 +41,7 @@ jobs:
         run: |
           source .venv/bin/activate
           pytest tests/
-      - name: Run black
-        run: black --check --verbose .
+      - name: Lint
+        uses: rickstaa/action-black@v1
+        with:
+          black_args: ". --check"
