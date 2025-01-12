@@ -48,6 +48,6 @@ jobs:
           black_args: ". --check"
       # lint with flake8
       - name: Lint with flake8
-        uses: py-actions/flake8@v2
+        uses: reviewdog/action-flake8@v3
         with:
-          args: "--config=.flake8"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
