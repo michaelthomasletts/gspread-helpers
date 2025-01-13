@@ -19,7 +19,7 @@ GOOGLE_SHEETS_COL_LIMIT = 18_278
 EXCEL_COL_LIMIT = 16_384
 
 
-def _validate_buffer(
+def _validate_buffer_arg(
     instance: Type["RangeName"], attribute: Type[Attribute], value: int
 ):
     """Validates that the buffer attribute is of type str or int, and that, if

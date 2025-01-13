@@ -8,7 +8,7 @@ from attrs import define, field
 from attrs.validators import ge, in_, instance_of, optional
 
 from .validations import (
-    _validate_buffer,
+    _validate_buffer_arg,
     _validate_cols_arg,
     _validate_rows_arg,
 )
@@ -52,6 +52,9 @@ class RangeName:
     override_col_limit : bool, optional
         Set to True if you would like to override the predetermined column
         limit. Default is False.
+
+    Other Attributes
+    ----------------
     range_name:
         Only accessible after the RangeName object is initialized. Generates
         the range name, e.g. 'A2:EE1000' per the provided arguments.
@@ -109,7 +112,7 @@ class RangeName:
         default=0, validator=optional([instance_of(int), ge(0)])
     )
     buffer: Union[int | str] = field(
-        default=0, validator=optional([_validate_buffer])
+        default=0, validator=optional([_validate_buffer_arg])
     )
     source: str = field(
         default="google_sheets",
@@ -117,8 +120,12 @@ class RangeName:
             [instance_of(str), in_(["excel", "google_sheets"])]
         ),
     )
-    override_row_limit: bool = field(default=False)
-    override_col_limit: bool = field(default=False)
+    override_row_limit: bool = field(
+        default=False, validator=instance_of(bool)
+    )
+    override_col_limit: bool = field(
+        default=False, validator=instance_of(bool)
+    )
 
     def __post_init_attrs__(self):
         self.buffer = (
