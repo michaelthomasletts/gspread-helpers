@@ -126,16 +126,17 @@ class RangeName:
     override_col_limit: bool = field(
         default=False, validator=instance_of(bool)
     )
+    range_name: str = field(init=False)
 
-    def __post_init_attrs__(self):
+    def __attrs_post_init__(self):
         self.buffer = (
             self.buffer.upper()
             if isinstance(self.buffer, str)
             else self.buffer
         )
+        self.range_name = self._range_name()
 
-    @property
-    def range_name(self) -> str:
+    def _range_name(self) -> str:
         # creating prefix
         match (buffer_is_str := isinstance(self.buffer, str)):
             case True:
