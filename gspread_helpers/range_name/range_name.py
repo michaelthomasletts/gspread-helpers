@@ -19,7 +19,7 @@ class RangeName:
     """Generates a range name for updating a worksheet in Google Sheets or
     Excel, e.g. 'A1:B5'.
 
-    Attributes
+    Parameters
     ----------
     rows : int
         The number of total rows that should be updated in the worksheet.
@@ -53,8 +53,8 @@ class RangeName:
         Set to True if you would like to override the predetermined column
         limit. Default is False.
 
-    Other Attributes
-    ----------------
+    Attributes
+    ----------
     range_name:
         Only accessible after the RangeName object is initialized. Generates
         the range name, e.g. 'A2:EE1000' per the provided arguments.
