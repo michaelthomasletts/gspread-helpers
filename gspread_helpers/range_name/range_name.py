@@ -43,7 +43,12 @@ class RangeName:
     buffer : int | str, optional
         If you do not want to construct the range name beginning from the letter
         'A' then provide an integer or alphabetical letter that corresponds to the
-        position with which you intend to begin constructing the range name.
+        position with which you intend to begin constructing the range name. When
+        providing an integer, think of that value as meaning how many shifts to the
+        right you want. For instance, if you intend to begin constructing the
+        range name from 'B' then provide '1' as an argument, i.e. one shift
+        rightward. It may be more intuitive, therefore, to provide alphabetical
+        letters as arguments instead of integers!
     source : ('google_sheets', 'excel'), optional
         Default is 'google_sheets'.
     override_row_limit : bool, optional

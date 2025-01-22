@@ -13,10 +13,10 @@ from attrs import Attribute
 
 from .exceptions import ColumnLimitExceeded, RowLimitExceeded
 
-GOOGLE_SHEETS_ROW_LIMIT = 10_000_000
-EXCEL_ROW_LIMIT = 1_048_576
-GOOGLE_SHEETS_COL_LIMIT = 18_278
-EXCEL_COL_LIMIT = 16_384
+GOOGLE_SHEETS_ROW_LIMIT: int = 10_000_000
+EXCEL_ROW_LIMIT: int = 1_048_576
+GOOGLE_SHEETS_COL_LIMIT: int = 18_278
+EXCEL_COL_LIMIT: int = 16_384
 
 
 def _validate_buffer_arg(
