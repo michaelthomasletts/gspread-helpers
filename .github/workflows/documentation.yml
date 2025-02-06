@@ -42,6 +42,7 @@ jobs:
       # updating docs
       - name: Sphinx build
         run: |
+          source .venv/bin/activate
           sphinx-build doc _build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
