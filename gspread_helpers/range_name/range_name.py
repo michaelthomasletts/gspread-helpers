@@ -1,3 +1,14 @@
+"""
+Helper method for dynamically creating range names, i.e. 'A2:BR34'.
+
+.. currentmodule:: gspread_helpers.range_name.range_name
+
+.. autosummary::
+    :toctree: range_name/
+
+    RangeName
+"""
+
 from __future__ import annotations
 
 __all__ = ["RangeName"]
@@ -79,7 +90,6 @@ class RangeName:
     Below, we override that limitation using the `override_col_limit` argument
     set to `True` and by setting `source` equal to 'excel'.
 
-    >>> from gspread_helpers import RangeName
     >>> rn = RangeName(
     >>>     rows=2, cols=1_048_580, override_col_limit=True, source="excel"
     >>> )

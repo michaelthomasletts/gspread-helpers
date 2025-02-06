@@ -1,3 +1,17 @@
+"""
+Configurable constants for controlling column and row limitations.
+
+.. currentmodule:: gspread_helpers.range_name.validations
+
+.. autosummary::
+    :toctree: range_name/
+
+    GOOGLE_SHEETS_ROW_LIMIT     Maximum number of rows for worksheets in Google Sheets.
+    EXCEL_ROW_LIMIT             Maximum number of rows for worksheets in Microsoft Excel.
+    GOOGLE_SHEETS_COL_LIMIT     Maximum number of columns for worksheets in Google Sheets.
+    EXCEL_COL_LIMIT             Maximum number of columns for worksheets in Microsoft Excel.
+"""
+
 from __future__ import annotations
 
 __all__ = [
@@ -25,6 +39,15 @@ def _validate_buffer_arg(
     """Validates that the buffer attribute is of type str or int, and that, if
     int, the value must be greater than or equal to zero, and, if str, the value
     must be alphabetical.
+
+    Parameters
+    ----------
+    instance : RangeName
+        RangeName object.
+    attribute : Attribute
+        `attrs.Attribute` object.
+    value : int
+        Parameter to validate.
 
     Raises
     ------
@@ -57,6 +80,15 @@ def _validate_rows_arg(
     """Validates that the rows argument does not exceed platform limits per
     the source and override_row_limit arguments.
 
+    Parameters
+    ----------
+    instance : RangeName
+        RangeName object.
+    attribute : Attribute
+        `attrs.Attribute` object.
+    value : int
+        Parameter to validate.
+
     Raises
     ------
     RowLimitExceeded : Exception
@@ -86,6 +118,15 @@ def _validate_cols_arg(
 ):
     """Validates that the cols argument does not exceed platform limits per
     the source and override_col_limit arguments.
+
+    Parameters
+    ----------
+    instance : RangeName
+        RangeName object.
+    attribute : Attribute
+        `attrs.Attribute` object.
+    value : int
+        Parameter to validate.
 
     Raises
     ------

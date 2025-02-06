@@ -69,7 +69,3 @@ Passing 'B' to `buffer` is equivalent to passing 1.
 ```python
 rn = RangeName(rows=2, cols=2, buffer="B")
 ```
-
-## Contributing
-
-Please refer to [contributing.md](https://github.com/michaelthomasletts/gspread-helpers/blob/main/docs/contributing.md) for step by step instructions for contributing to this project and understanding the coding standards before opening a pull request.
