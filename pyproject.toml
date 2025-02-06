@@ -12,10 +12,11 @@ description = "A simple Python package which provides supplementary helper metho
 readme = "README.md"
 license = { text = "MIT" }
 keywords = [ "gspread", "gspread-helpers", "gspread_helpers" ]
-version = "0.0.19"
+version = "0.0.20"
 
 [project.urls]
 repository = "https://github.com/michaelthomasletts/gspread-helpers"
+documentation = "https://michaelthomasletts.github.io/gspread-helpers/index.html"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

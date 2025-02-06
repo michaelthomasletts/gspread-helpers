@@ -7,6 +7,9 @@
 
 A simple Python package which provides supplementary helper methods for [gspread](https://github.com/burnash/gspread).
 
+## Links
+[Official Documentation](https://michaelthomasletts.github.io/gspread-helpers/index.html)
+
 ## Features
 - `gspread_helpers.RangeName` method for automatically generating dynamic range names, e.g. "A1:R455"
 

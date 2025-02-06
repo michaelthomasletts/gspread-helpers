@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "gspread-helpers"
 copyright = "2025, Michael Letts"
 author = "Michael Letts"
-release = "0.0.19"
+release = "0.0.20"
 
 extensions = [
     "sphinx.ext.autodoc",
