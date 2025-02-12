@@ -49,6 +49,12 @@ html_theme_options = {
             "icon": "fab fa-github-square",
             "type": "fontawesome",
         },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/gspread-helpers/",
+            "icon": "https://img.icons8.com/androidL/512/FFFFFF/pypi.png",
+            "type": "url",
+        },
     ],
 }
 autodoc_default_options = {
