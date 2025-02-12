@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gspread_helpers.range_name.range_name &#8212; gspread-helpers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=056c92e6"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/range_name/gspread_helpers.range_name.range_name';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gspread_helpers.range_name.validations" href="gspread_helpers.range_name.validations.html" />
+    <link rel="prev" title="gspread_helpers.range_name.exceptions" href="gspread_helpers.range_name.exceptions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">gspread-helpers</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/gspread-helpers/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/gspread-helpers/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../range_name.html" class="nav-link">gspread_helpers.range_name</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gspread_helpers.range_name.range_name</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-gspread_helpers.range_name.range_name">
+<span id="gspread-helpers-range-name-range-name"></span><h1>gspread_helpers.range_name.range_name<a class="headerlink" href="#module-gspread_helpers.range_name.range_name" title="Link to this heading">#</a></h1>
+<p>Helper method for dynamically creating range names, i.e. ‘A2:BR34’.</p>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gspread_helpers.range_name.range_name.RangeName" title="gspread_helpers.range_name.range_name.RangeName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeName</span></code></a></p></td>
+<td><p>Generates a range name for updating a worksheet in Google Sheets or Excel, e.g. 'A1:B5'.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.range_name.RangeName">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.range_name.</span></span><span class="sig-name descname"><span class="pre">RangeName</span></span><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/range_name.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.range_name.RangeName" title="Link to this definition">#</a></dt>
+<dd><p>Generates a range name for updating a worksheet in Google Sheets or
+Excel, e.g. ‘A1:B5’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rows</strong><span class="classifier">int</span></dt><dd><p>The number of total rows that should be updated in the worksheet.
+Value must be greater than zero. Value must also not exceed the
+predtermined limits set by the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code> and-or
+<code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constants. Modulate the override_row_limit argument
+to supersede those limits. You may also modify the just-mentioned
+constants.</p>
+</dd>
+<dt><strong>cols</strong><span class="classifier">int</span></dt><dd><p>The number of total columns that should be updated in the worksheet.
+Value must be greater than zero. Value must also not exceed the
+predtermined limits set by the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code> and-or
+<code class="docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code> constants. Modulate the override_col_limit argument
+to supersede those limits. You may also modify the just-mentioned
+constants.</p>
+</dd>
+<dt><strong>header_rows_size</strong><span class="classifier">int, optional</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">rows</span></code> and <code class="docutils literal notranslate"><span class="pre">cols</span></code> arguments do not account for a pre-existing
+header in the worksheet then use this parameter to indicate how large
+the header is, in terms of number of rows. Value must be equal to or
+greater than zero. Default is 0.</p>
+</dd>
+<dt><strong>buffer</strong><span class="classifier">int | str, optional</span></dt><dd><p>If you do not want to construct the range name beginning from the letter
+‘A’ then provide an integer or alphabetical letter that corresponds to the
+position with which you intend to begin constructing the range name. When
+providing an integer, think of that value as meaning how many shifts to the
+right you want. For instance, if you intend to begin constructing the
+range name from ‘B’ then provide ‘1’ as an argument, i.e. one shift
+rightward. It may be more intuitive, therefore, to provide alphabetical
+letters as arguments instead of integers!</p>
+</dd>
+<dt><strong>source</strong><span class="classifier">(‘google_sheets’, ‘excel’), optional</span></dt><dd><p>Default is ‘google_sheets’.</p>
+</dd>
+<dt><strong>override_row_limit</strong><span class="classifier">bool, optional</span></dt><dd><p>Set to True if you would like to override the predetermined row limit.
+Default is False.</p>
+</dd>
+<dt><strong>override_col_limit</strong><span class="classifier">bool, optional</span></dt><dd><p>Set to True if you would like to override the predetermined column
+limit. Default is False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>range_name:</strong></p></td>
+<td><p>Only accessible after the <code class="docutils literal notranslate"><span class="pre">RangeName</span></code> object is initialized. Generates the range name, e.g. ‘A2:EE1000’ per the provided arguments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>RowLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the rows argument exceeds the predetermined limit set by
+the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constants.</p>
+</dd>
+<dt><strong>ColumnLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the cols argument exceeds the predetermined limit set by
+the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code> constants.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.validations.EXCEL_COL_LIMIT</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="gspread_helpers.range_name.exceptions.html#gspread_helpers.range_name.exceptions.RowLimitExceeded" title="gspread_helpers.range_name.exceptions.RowLimitExceeded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.exceptions.RowLimitExceeded</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="gspread_helpers.range_name.exceptions.html#gspread_helpers.range_name.exceptions.ColumnLimitExceeded" title="gspread_helpers.range_name.exceptions.ColumnLimitExceeded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.range_name.exceptions.ColumnLimitExceeded</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>The row limit for range names in Microsoft Excel is, by default, 1,048,576.
+Below, we override that limitation using the <code class="docutils literal notranslate"><span class="pre">override_col_limit</span></code> argument
+set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and by setting <code class="docutils literal notranslate"><span class="pre">source</span></code> equal to ‘excel’.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">override_col_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
+<span class="go">&#39;A1:BGQCZ2&#39;</span>
+</pre></div>
+</div>
+<p>However, we could have also updated the <code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constant instead.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gspread_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EXCEL_ROW_LIMIT</span> <span class="o">=</span> <span class="mi">1_048_580</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
+<span class="go">&#39;A1:BGQCZ2&#39;</span>
+</pre></div>
+</div>
+<p>Modulating the <code class="docutils literal notranslate"><span class="pre">header_rows_size</span></code> argument looks like this.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">header_rows_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;A3:B4&#39;</span>
+</pre></div>
+</div>
+<p>Finally, if we want to buffer the range name beginning from ‘B’, we may do
+this.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;B1:C2&#39;</span>
+</pre></div>
+</div>
+<p>Passing ‘B’ to <code class="docutils literal notranslate"><span class="pre">buffer</span></code> is equivalent to passing 1.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="go">&#39;B1:C2&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gspread_helpers.range_name.exceptions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">gspread_helpers.range_name.exceptions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gspread_helpers.range_name.validations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">gspread_helpers.range_name.validations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.range_name.RangeName"><code class="docutils literal notranslate"><span class="pre">RangeName</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/reference/range_name/gspread_helpers.range_name.range_name.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Michael Letts.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
