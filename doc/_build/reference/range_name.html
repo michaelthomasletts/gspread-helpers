@@ -373,6 +373,38 @@
 </table>
 </div>
 </section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<p>The row limit for range names in Microsoft Excel is, by default, 1,048,576.
+Below, we override that limitation using the <code class="docutils literal notranslate"><span class="pre">override_col_limit</span></code> argument
+set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and by setting <code class="docutils literal notranslate"><span class="pre">source</span></code> equal to ‘excel’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gspread_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span><span class="p">,</span> <span class="n">RangeName</span>
+
+<span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span>
+    <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">override_col_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>However, we could have also modulated the <code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constant instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EXCEL_ROW_LIMIT</span> <span class="o">=</span> <span class="mi">1_048_580</span>
+<span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Modulating the <code class="docutils literal notranslate"><span class="pre">header_rows_size</span></code> argument looks like this, and returns ‘A3:B4’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">header_rows_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, if we want to buffer the range name beginning from ‘B’, we may do
+this, which returns ‘B1:C2’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Passing ‘B’ to <code class="docutils literal notranslate"><span class="pre">buffer</span></code> is equivalent to passing 1, and returns ‘B1:C2’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -423,6 +455,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 </ul>
   </nav></div>
 
