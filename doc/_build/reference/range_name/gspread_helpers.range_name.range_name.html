@@ -369,19 +369,19 @@ Excel, e.g. ‘A1:B5’.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>rows</strong><span class="classifier">int</span></dt><dd><p>The number of total rows that should be updated in the worksheet.
 Value must be greater than zero. Value must also not exceed the
-predtermined limits set by the GOOGLE_SHEETS_ROW_LIMIT and-or
-EXCEL_ROW_LIMIT constants. Modulate the override_row_limit argument
+predtermined limits set by the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code> and-or
+<code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constants. Modulate the override_row_limit argument
 to supersede those limits. You may also modify the just-mentioned
 constants.</p>
 </dd>
 <dt><strong>cols</strong><span class="classifier">int</span></dt><dd><p>The number of total columns that should be updated in the worksheet.
 Value must be greater than zero. Value must also not exceed the
-predtermined limits set by the GOOGLE_SHEETS_COL_LIMIT and-or
-EXCEL_COL_LIMIT constants. Modulate the override_col_limit argument
+predtermined limits set by the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code> and-or
+<code class="docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code> constants. Modulate the override_col_limit argument
 to supersede those limits. You may also modify the just-mentioned
 constants.</p>
 </dd>
-<dt><strong>header_rows_size</strong><span class="classifier">int, optional</span></dt><dd><p>If the rows and cols arguments do not account for a pre-existing
+<dt><strong>header_rows_size</strong><span class="classifier">int, optional</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">rows</span></code> and <code class="docutils literal notranslate"><span class="pre">cols</span></code> arguments do not account for a pre-existing
 header in the worksheet then use this parameter to indicate how large
 the header is, in terms of number of rows. Value must be equal to or
 greater than zero. Default is 0.</p>
@@ -410,7 +410,7 @@ limit. Default is False.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <tbody>
 <tr class="row-odd"><td><p><strong>range_name:</strong></p></td>
-<td><p>Only accessible after the RangeName object is initialized. Generates the range name, e.g. ‘A2:EE1000’ per the provided arguments.</p></td>
+<td><p>Only accessible after the <code class="docutils literal notranslate"><span class="pre">RangeName</span></code> object is initialized. Generates the range name, e.g. ‘A2:EE1000’ per the provided arguments.</p></td>
 </tr>
 </tbody>
 </table>
@@ -419,10 +419,10 @@ limit. Default is False.</p>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>RowLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the rows argument exceeds the predetermined limit set by
-the GOOGLE_SHEETS_ROW_LIMIT and EXCEL_ROW_LIMIT constants.</p>
+the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constants.</p>
 </dd>
 <dt><strong>ColumnLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the cols argument exceeds the predetermined limit set by
-the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.</p>
+the <code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code> constants.</p>
 </dd>
 </dl>
 </dd>
@@ -440,8 +440,8 @@ the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.</p>
 </div>
 <p class="rubric">Examples</p>
 <p>The row limit for range names in Microsoft Excel is, by default, 1,048,576.
-Below, we override that limitation using the <cite>override_col_limit</cite> argument
-set to <cite>True</cite> and by setting <cite>source</cite> equal to ‘excel’.</p>
+Below, we override that limitation using the <code class="docutils literal notranslate"><span class="pre">override_col_limit</span></code> argument
+set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and by setting <code class="docutils literal notranslate"><span class="pre">source</span></code> equal to ‘excel’.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">override_col_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
@@ -449,7 +449,7 @@ set to <cite>True</cite> and by setting <cite>source</cite> equal to ‘excel’
 <span class="go">&#39;A1:BGQCZ2&#39;</span>
 </pre></div>
 </div>
-<p>However, we could have also updated the <cite>EXCEL_ROW_LIMIT</cite> constant instead.</p>
+<p>However, we could have also updated the <code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code> constant instead.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gspread_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">EXCEL_ROW_LIMIT</span> <span class="o">=</span> <span class="mi">1_048_580</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span><span class="p">)</span>
@@ -457,7 +457,7 @@ set to <cite>True</cite> and by setting <cite>source</cite> equal to ‘excel’
 <span class="go">&#39;A1:BGQCZ2&#39;</span>
 </pre></div>
 </div>
-<p>Modulating the <cite>header_rows_size</cite> argument looks like this.</p>
+<p>Modulating the <code class="docutils literal notranslate"><span class="pre">header_rows_size</span></code> argument looks like this.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">header_rows_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">&#39;A3:B4&#39;</span>
 </pre></div>
@@ -468,7 +468,7 @@ this.</p>
 <span class="go">&#39;B1:C2&#39;</span>
 </pre></div>
 </div>
-<p>Passing ‘B’ to <cite>buffer</cite> is equivalent to passing 1.</p>
+<p>Passing ‘B’ to <code class="docutils literal notranslate"><span class="pre">buffer</span></code> is equivalent to passing 1.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
 <span class="go">&#39;B1:C2&#39;</span>
 </pre></div>

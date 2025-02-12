@@ -27,19 +27,19 @@ class RangeName:
     rows : int
         The number of total rows that should be updated in the worksheet.
         Value must be greater than zero. Value must also not exceed the
-        predtermined limits set by the GOOGLE_SHEETS_ROW_LIMIT and-or
-        EXCEL_ROW_LIMIT constants. Modulate the override_row_limit argument
+        predtermined limits set by the ``GOOGLE_SHEETS_ROW_LIMIT`` and-or
+        ``EXCEL_ROW_LIMIT`` constants. Modulate the override_row_limit argument
         to supersede those limits. You may also modify the just-mentioned
         constants.
     cols : int
         The number of total columns that should be updated in the worksheet.
         Value must be greater than zero. Value must also not exceed the
-        predtermined limits set by the GOOGLE_SHEETS_COL_LIMIT and-or
-        EXCEL_COL_LIMIT constants. Modulate the override_col_limit argument
+        predtermined limits set by the ``GOOGLE_SHEETS_COL_LIMIT`` and-or
+        ``EXCEL_COL_LIMIT`` constants. Modulate the override_col_limit argument
         to supersede those limits. You may also modify the just-mentioned
         constants.
     header_rows_size : int, optional
-        If the rows and cols arguments do not account for a pre-existing
+        If the ``rows`` and ``cols`` arguments do not account for a pre-existing
         header in the worksheet then use this parameter to indicate how large
         the header is, in terms of number of rows. Value must be equal to or
         greater than zero. Default is 0.
@@ -64,17 +64,17 @@ class RangeName:
     Attributes
     ----------
     range_name:
-        Only accessible after the RangeName object is initialized. Generates
+        Only accessible after the ``RangeName`` object is initialized. Generates
         the range name, e.g. 'A2:EE1000' per the provided arguments.
 
     Raises
     ------
     RowLimitExceeded : Exception
         Raised if the rows argument exceeds the predetermined limit set by
-        the GOOGLE_SHEETS_ROW_LIMIT and EXCEL_ROW_LIMIT constants.
+        the ``GOOGLE_SHEETS_ROW_LIMIT`` and ``EXCEL_ROW_LIMIT`` constants.
     ColumnLimitExceeded : Exception
         Raised if the cols argument exceeds the predetermined limit set by
-        the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.
+        the ``GOOGLE_SHEETS_COL_LIMIT`` and ``EXCEL_COL_LIMIT`` constants.
 
     See Also
     --------
@@ -88,8 +88,8 @@ class RangeName:
     Examples
     --------
     The row limit for range names in Microsoft Excel is, by default, 1,048,576.
-    Below, we override that limitation using the `override_col_limit` argument
-    set to `True` and by setting `source` equal to 'excel'.
+    Below, we override that limitation using the ``override_col_limit`` argument
+    set to ``True`` and by setting ``source`` equal to 'excel'.
 
     >>> rn = RangeName(
     >>>     rows=2, cols=1_048_580, override_col_limit=True, source="excel"
@@ -97,7 +97,7 @@ class RangeName:
     >>> print(rn.range_name)
     'A1:BGQCZ2'
 
-    However, we could have also updated the `EXCEL_ROW_LIMIT` constant instead.
+    However, we could have also updated the ``EXCEL_ROW_LIMIT`` constant instead.
 
     >>> from gspread_helpers import EXCEL_ROW_LIMIT
     >>> EXCEL_ROW_LIMIT = 1_048_580
@@ -105,7 +105,7 @@ class RangeName:
     >>> print(rn.range_name)
     'A1:BGQCZ2'
 
-    Modulating the `header_rows_size` argument looks like this.
+    Modulating the ``header_rows_size`` argument looks like this.
 
     >>> rn = RangeName(rows=2, cols=2, header_rows_size=2)
     'A3:B4'
@@ -116,7 +116,7 @@ class RangeName:
     >>> rn = RangeName(rows=2, cols=2, buffer=1)
     'B1:C2'
 
-    Passing 'B' to `buffer` is equivalent to passing 1.
+    Passing 'B' to ``buffer`` is equivalent to passing 1.
 
     >>> rn = RangeName(rows=2, cols=2, buffer="B")
     'B1:C2'

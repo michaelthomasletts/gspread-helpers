@@ -40,16 +40,16 @@ def _validate_buffer_arg(
     Parameters
     ----------
     instance : RangeName
-        RangeName object.
+        ``RangeName`` object.
     attribute : Attribute
-        `attrs.Attribute` object.
+        ``attrs.Attribute`` object.
     value : int
         Parameter to validate.
 
     Raises
     ------
     ValueError : Exception
-        Raised if buffer is not of type int or str, or if less than zero or
+        Raised if ``buffer`` is not of type int or str, or if less than zero or
         non-alphabetical.
     """
 
@@ -80,17 +80,17 @@ def _validate_rows_arg(
     Parameters
     ----------
     instance : RangeName
-        RangeName object.
+        ``RangeName`` object.
     attribute : Attribute
-        `attrs.Attribute` object.
+        ``attrs.Attribute`` object.
     value : int
         Parameter to validate.
 
     Raises
     ------
     RowLimitExceeded : Exception
-        Raised if the rows argument exceeds the predetermined limit set by
-        the GOOGLE_SHEETS_ROW_LIMIT and EXCEL_ROW_LIMIT constants.
+        Raised if the ``rows`` argument exceeds the predetermined limit set by
+        the ``GOOGLE_SHEETS_ROW_LIMIT`` and ``EXCEL_ROW_LIMIT`` constants.
     """
 
     _value = value + instance.header_rows_size
@@ -113,23 +113,23 @@ def _validate_rows_arg(
 def _validate_cols_arg(
     instance: Type["RangeName"], attribute: Type[Attribute], value: int
 ):
-    """Validates that the cols argument does not exceed platform limits per
-    the source and override_col_limit arguments.
+    """Validates that the ``cols`` argument does not exceed platform limits per
+    the ``source`` and ``override_col_limit`` arguments.
 
     Parameters
     ----------
     instance : RangeName
-        RangeName object.
+        ``RangeName`` object.
     attribute : Attribute
-        `attrs.Attribute` object.
+        ``attrs.Attribute`` object.
     value : int
         Parameter to validate.
 
     Raises
     ------
     ColumnLimitExceeded : Exception
-        Raised if the cols argument exceeds the predetermined limit set by
-        the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.
+        Raised if the ``cols`` argument exceeds the predetermined limit set by
+        the ``GOOGLE_SHEETS_COL_LIMIT`` and ``EXCEL_COL_LIMIT`` constants.
     """
 
     match instance.override_col_limit:
