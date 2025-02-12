@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>gspread_helpers.range_name.range_name.RangeName &#8212; gspread-helpers 0.0.19 documentation</title>
+    <title>gspread_helpers.range_name.range_name.RangeName &#8212; gspread-helpers</title>
   
   
   
@@ -30,7 +30,7 @@
   <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
   
   <!-- So that users can add custom icons -->
   <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=2fd7553c"></script>
+    <script src="../../../_static/documentation_options.js?v=056c92e6"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/range_name/range_name/gspread_helpers.range_name.range_name.RangeName';</script>
@@ -110,7 +110,7 @@
   
   
   
-    <p class="title logo__title">gspread-helpers 0.0.19 documentation</p>
+    <p class="title logo__title">gspread-helpers</p>
   
 </a></div>
     
@@ -414,7 +414,7 @@ set to <cite>True</cite> and by setting <cite>source</cite> equal to ‘excel’
 </pre></div>
 </div>
 <p>However, we could have also updated the <cite>EXCEL_ROW_LIMIT</cite> constant instead.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gspread_helpers</span> <span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gspread_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">EXCEL_ROW_LIMIT</span> <span class="o">=</span> <span class="mi">1_048_580</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
