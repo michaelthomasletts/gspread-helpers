@@ -39,7 +39,6 @@ html_theme_options = {
     "collapse_navigation": True,
     "navbar_end": [
         "search-button",
-        "theme-switcher",
         "navbar-icon-links.html",
     ],
     "icon_links": [
