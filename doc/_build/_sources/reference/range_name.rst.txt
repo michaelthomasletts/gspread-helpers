@@ -2,8 +2,8 @@
 
 .. currentmodule:: gspread_helpers.range_name
 
-range_name
-**********
+gspread_helpers.range_name
+**************************
 
 The following submodules contain methods for generating dynamic range names, i.e. 'A2:C59'.
 
