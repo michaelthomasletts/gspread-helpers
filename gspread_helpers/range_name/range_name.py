@@ -78,12 +78,12 @@ class RangeName:
 
     See Also
     --------
-    gspread_helpers.GOOGLE_SHEETS_ROW_LIMIT
-    gspread_helpers.EXCEL_ROW_LIMIT
-    gspread_helpers.GOOGLE_SHEETS_COL_LIMIT
-    gspread_helpers.EXCEL_COL_LIMIT
-    gspread_helpers.RowLimitExceeded
-    gspread_helpers.ColumnLimitExceeded
+    gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT
+    gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT
+    gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT
+    gspread_helpers.range_name.validations.EXCEL_COL_LIMIT
+    gspread_helpers.range_name.exceptions.RowLimitExceeded
+    gspread_helpers.range_name.exceptions.ColumnLimitExceeded
 
     Examples
     --------
