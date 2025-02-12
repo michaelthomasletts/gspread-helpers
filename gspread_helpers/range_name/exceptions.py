@@ -1,6 +1,6 @@
 """
-Exceptions and Warnings (:mod:`gspread_helpers.range_name.exceptions`)
-======================================================================
+Exceptions and Warnings
+=======================
 
 General exceptions used by ``gspread_helpers.range_name``.
 """
