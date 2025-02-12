@@ -1,9 +1,8 @@
-"""
-Configurable constants for controlling column and row limitations.
-"""
-
 from __future__ import annotations
 
+__doc__ = """
+Configurable constants for controlling column and row limitations.
+"""
 __all__ = [
     "GOOGLE_SHEETS_ROW_LIMIT",
     "EXCEL_ROW_LIMIT",
