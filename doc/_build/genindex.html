@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="./" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -12,8 +12,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -29,7 +29,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -49,7 +49,7 @@
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -155,11 +155,33 @@
       
         <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+      
+        <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -230,11 +252,33 @@
         
           <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+        
+          <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -272,26 +316,17 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#_"><strong>_</strong></a>
- | <a href="#C"><strong>C</strong></a>
+ <a href="#C"><strong>C</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#R"><strong>R</strong></a>
  
 </div>
-<h2 id="_">_</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.range_name.RangeName.html#gspread_helpers.range_name.range_name.RangeName.__init__">__init__() (gspread_helpers.range_name.range_name.RangeName method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.exceptions.ColumnLimitExceeded.html#gspread_helpers.range_name.exceptions.ColumnLimitExceeded">ColumnLimitExceeded</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.exceptions.html#gspread_helpers.range_name.exceptions.ColumnLimitExceeded">ColumnLimitExceeded</a>
 </li>
   </ul></td>
 </tr></table>
@@ -299,11 +334,11 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.validations.EXCEL_COL_LIMIT.html#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT">EXCEL_COL_LIMIT (in module gspread_helpers.range_name.validations)</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT">EXCEL_COL_LIMIT (in module gspread_helpers.range_name.validations)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT.html#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT">EXCEL_ROW_LIMIT (in module gspread_helpers.range_name.validations)</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT">EXCEL_ROW_LIMIT (in module gspread_helpers.range_name.validations)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -311,9 +346,9 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT">GOOGLE_SHEETS_COL_LIMIT (in module gspread_helpers.range_name.validations)</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT">GOOGLE_SHEETS_COL_LIMIT (in module gspread_helpers.range_name.validations)</a>
 </li>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT">GOOGLE_SHEETS_ROW_LIMIT (in module gspread_helpers.range_name.validations)</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.validations.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT">GOOGLE_SHEETS_ROW_LIMIT (in module gspread_helpers.range_name.validations)</a>
 </li>
       <li>
     gspread_helpers
@@ -370,11 +405,11 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.range_name.RangeName.html#gspread_helpers.range_name.range_name.RangeName">RangeName (class in gspread_helpers.range_name.range_name)</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.range_name.html#gspread_helpers.range_name.range_name.RangeName">RangeName (class in gspread_helpers.range_name.range_name)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/range_name/range_name/gspread_helpers.range_name.exceptions.RowLimitExceeded.html#gspread_helpers.range_name.exceptions.RowLimitExceeded">RowLimitExceeded</a>
+      <li><a href="reference/range_name/gspread_helpers.range_name.exceptions.html#gspread_helpers.range_name.exceptions.RowLimitExceeded">RowLimitExceeded</a>
 </li>
   </ul></td>
 </tr></table>

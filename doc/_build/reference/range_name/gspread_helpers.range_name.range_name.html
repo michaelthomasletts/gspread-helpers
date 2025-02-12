@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -44,15 +44,15 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/range_name/gspread_helpers.range_name.range_name';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="gspread_helpers.range_name.range_name.RangeName" href="range_name/gspread_helpers.range_name.range_name.RangeName.html" />
-    <link rel="prev" title="gspread_helpers.range_name.exceptions.ColumnLimitExceeded" href="range_name/gspread_helpers.range_name.exceptions.ColumnLimitExceeded.html" />
+    <link rel="next" title="gspread_helpers.range_name.validations" href="gspread_helpers.range_name.validations.html" />
+    <link rel="prev" title="gspread_helpers.range_name.exceptions" href="gspread_helpers.range_name.exceptions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -158,11 +158,33 @@
       
         <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+      
+        <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -195,7 +217,7 @@
       
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -235,45 +257,37 @@
         
           <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+        
+          <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
       </div>
     
   </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../range_name.html">gspread_helpers.range_name</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="gspread_helpers.range_name.exceptions.html">gspread_helpers.range_name.exceptions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.exceptions.RowLimitExceeded.html">gspread_helpers.range_name.exceptions.RowLimitExceeded</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.exceptions.ColumnLimitExceeded.html">gspread_helpers.range_name.exceptions.ColumnLimitExceeded</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">gspread_helpers.range_name.range_name</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.range_name.RangeName.html">gspread_helpers.range_name.range_name.RangeName</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="gspread_helpers.range_name.validations.html">gspread_helpers.range_name.validations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html">gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT.html">gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT.html">gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_COL_LIMIT.html">gspread_helpers.range_name.validations.EXCEL_COL_LIMIT</a></li>
-</ul>
-</details></li>
-</ul>
-</details></li>
-</ul>
-</div>
-</nav></div>
-    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -336,23 +350,131 @@
   <section id="module-gspread_helpers.range_name.range_name">
 <span id="gspread-helpers-range-name-range-name"></span><h1>gspread_helpers.range_name.range_name<a class="headerlink" href="#module-gspread_helpers.range_name.range_name" title="Link to this heading">#</a></h1>
 <p>Helper method for dynamically creating range names, i.e. ‘A2:BR34’.</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.range_name.RangeName.html#gspread_helpers.range_name.range_name.RangeName" title="gspread_helpers.range_name.range_name.RangeName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeName</span></code></a>(rows, cols[, header_rows_size, ...])</p></td>
-<td><p>Generates a range name for updating a worksheet in Google Sheets or Excel, e.g. 'A1:B5'.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 <p class="rubric">Classes</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.range_name.RangeName.html#gspread_helpers.range_name.range_name.RangeName" title="gspread_helpers.range_name.range_name.RangeName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeName</span></code></a>(rows, cols[, header_rows_size, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gspread_helpers.range_name.range_name.RangeName" title="gspread_helpers.range_name.range_name.RangeName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeName</span></code></a>(rows, cols[, header_rows_size, ...])</p></td>
 <td><p>Generates a range name for updating a worksheet in Google Sheets or Excel, e.g. 'A1:B5'.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<dl class="py class">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.range_name.RangeName">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.range_name.</span></span><span class="sig-name descname"><span class="pre">RangeName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_rows_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'google_sheets'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_row_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_col_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/range_name.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.range_name.RangeName" title="Link to this definition">#</a></dt>
+<dd><p>Generates a range name for updating a worksheet in Google Sheets or
+Excel, e.g. ‘A1:B5’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rows</strong><span class="classifier">int</span></dt><dd><p>The number of total rows that should be updated in the worksheet.
+Value must be greater than zero. Value must also not exceed the
+predtermined limits set by the GOOGLE_SHEETS_ROW_LIMIT and-or
+EXCEL_ROW_LIMIT constants. Modulate the override_row_limit argument
+to supersede those limits. You may also modify the just-mentioned
+constants.</p>
+</dd>
+<dt><strong>cols</strong><span class="classifier">int</span></dt><dd><p>The number of total columns that should be updated in the worksheet.
+Value must be greater than zero. Value must also not exceed the
+predtermined limits set by the GOOGLE_SHEETS_COL_LIMIT and-or
+EXCEL_COL_LIMIT constants. Modulate the override_col_limit argument
+to supersede those limits. You may also modify the just-mentioned
+constants.</p>
+</dd>
+<dt><strong>header_rows_size</strong><span class="classifier">int, optional</span></dt><dd><p>If the rows and cols arguments do not account for a pre-existing
+header in the worksheet then use this parameter to indicate how large
+the header is, in terms of number of rows. Value must be equal to or
+greater than zero. Default is 0.</p>
+</dd>
+<dt><strong>buffer</strong><span class="classifier">int | str, optional</span></dt><dd><p>If you do not want to construct the range name beginning from the letter
+‘A’ then provide an integer or alphabetical letter that corresponds to the
+position with which you intend to begin constructing the range name. When
+providing an integer, think of that value as meaning how many shifts to the
+right you want. For instance, if you intend to begin constructing the
+range name from ‘B’ then provide ‘1’ as an argument, i.e. one shift
+rightward. It may be more intuitive, therefore, to provide alphabetical
+letters as arguments instead of integers!</p>
+</dd>
+<dt><strong>source</strong><span class="classifier">(‘google_sheets’, ‘excel’), optional</span></dt><dd><p>Default is ‘google_sheets’.</p>
+</dd>
+<dt><strong>override_row_limit</strong><span class="classifier">bool, optional</span></dt><dd><p>Set to True if you would like to override the predetermined row limit.
+Default is False.</p>
+</dd>
+<dt><strong>override_col_limit</strong><span class="classifier">bool, optional</span></dt><dd><p>Set to True if you would like to override the predetermined column
+limit. Default is False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>range_name:</strong></p></td>
+<td><p>Only accessible after the RangeName object is initialized. Generates the range name, e.g. ‘A2:EE1000’ per the provided arguments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>RowLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the rows argument exceeds the predetermined limit set by
+the GOOGLE_SHEETS_ROW_LIMIT and EXCEL_ROW_LIMIT constants.</p>
+</dd>
+<dt><strong>ColumnLimitExceeded</strong><span class="classifier">Exception</span></dt><dd><p>Raised if the cols argument exceeds the predetermined limit set by
+the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.GOOGLE_SHEETS_ROW_LIMIT</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.EXCEL_ROW_LIMIT</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.GOOGLE_SHEETS_COL_LIMIT</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.EXCEL_COL_LIMIT</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.RowLimitExceeded</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">gspread_helpers.ColumnLimitExceeded</span></code></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>The row limit for range names in Microsoft Excel is, by default, 1,048,576.
+Below, we override that limitation using the <cite>override_col_limit</cite> argument
+set to <cite>True</cite> and by setting <cite>source</cite> equal to ‘excel’.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">override_col_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
+<span class="go">&#39;A1:BGQCZ2&#39;</span>
+</pre></div>
+</div>
+<p>However, we could have also updated the <cite>EXCEL_ROW_LIMIT</cite> constant instead.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">gspread_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXCEL_ROW_LIMIT</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EXCEL_ROW_LIMIT</span> <span class="o">=</span> <span class="mi">1_048_580</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1_048_580</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;excel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">range_name</span><span class="p">)</span>
+<span class="go">&#39;A1:BGQCZ2&#39;</span>
+</pre></div>
+</div>
+<p>Modulating the <cite>header_rows_size</cite> argument looks like this.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">header_rows_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;A3:B4&#39;</span>
+</pre></div>
+</div>
+<p>Finally, if we want to buffer the range name beginning from ‘B’, we may do
+this.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;B1:C2&#39;</span>
+</pre></div>
+</div>
+<p>Passing ‘B’ to <cite>buffer</cite> is equivalent to passing 1.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rn</span> <span class="o">=</span> <span class="n">RangeName</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="go">&#39;B1:C2&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -366,20 +488,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="range_name/gspread_helpers.range_name.exceptions.ColumnLimitExceeded.html"
+       href="gspread_helpers.range_name.exceptions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">gspread_helpers.range_name.exceptions.ColumnLimitExceeded</p>
+        <p class="prev-next-title">gspread_helpers.range_name.exceptions</p>
       </div>
     </a>
     <a class="right-next"
-       href="range_name/gspread_helpers.range_name.range_name.RangeName.html"
+       href="gspread_helpers.range_name.validations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">gspread_helpers.range_name.range_name.RangeName</p>
+        <p class="prev-next-title">gspread_helpers.range_name.validations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -393,6 +515,18 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.range_name.RangeName"><code class="docutils literal notranslate"><span class="pre">RangeName</span></code></a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

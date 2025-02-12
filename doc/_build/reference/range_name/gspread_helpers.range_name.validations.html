@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -30,7 +30,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -44,15 +44,15 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'reference/range_name/gspread_helpers.range_name.validations';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html" />
-    <link rel="prev" title="gspread_helpers.range_name.range_name.RangeName" href="range_name/gspread_helpers.range_name.range_name.RangeName.html" />
+    <link rel="next" title="Installation" href="../../installation.html" />
+    <link rel="prev" title="gspread_helpers.range_name.range_name" href="gspread_helpers.range_name.range_name.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -158,11 +158,33 @@
       
         <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+      
+        <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -195,7 +217,7 @@
       
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -235,45 +257,37 @@
         
           <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+        
+          <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
       </div>
     
   </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../range_name.html">gspread_helpers.range_name</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="gspread_helpers.range_name.exceptions.html">gspread_helpers.range_name.exceptions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.exceptions.RowLimitExceeded.html">gspread_helpers.range_name.exceptions.RowLimitExceeded</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.exceptions.ColumnLimitExceeded.html">gspread_helpers.range_name.exceptions.ColumnLimitExceeded</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="gspread_helpers.range_name.range_name.html">gspread_helpers.range_name.range_name</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.range_name.RangeName.html">gspread_helpers.range_name.range_name.RangeName</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">gspread_helpers.range_name.validations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html">gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT.html">gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT.html">gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_COL_LIMIT.html">gspread_helpers.range_name.validations.EXCEL_COL_LIMIT</a></li>
-</ul>
-</details></li>
-</ul>
-</details></li>
-</ul>
-</div>
-</nav></div>
-    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -336,23 +350,48 @@
   <section id="module-gspread_helpers.range_name.validations">
 <span id="gspread-helpers-range-name-validations"></span><h1>gspread_helpers.range_name.validations<a class="headerlink" href="#module-gspread_helpers.range_name.validations" title="Link to this heading">#</a></h1>
 <p>Configurable constants for controlling column and row limitations.</p>
+<p class="rubric">Module Attributes</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code></a></p></td>
-<td><p>int([x]) -&gt; integer int(x, base=10) -&gt; integer</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code></a></p></td>
+<td><p>Maximum number of rows for worksheets in Google Sheets.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT.html#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code></a></p></td>
-<td><p>int([x]) -&gt; integer int(x, base=10) -&gt; integer</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code></a></p></td>
+<td><p>Maximum number of rows for worksheets in Microsoft Excel.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT.html#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code></a></p></td>
-<td><p>int([x]) -&gt; integer int(x, base=10) -&gt; integer</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT" title="gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code></a></p></td>
+<td><p>Maximum number of columns for worksheets in Google Sheets.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="range_name/gspread_helpers.range_name.validations.EXCEL_COL_LIMIT.html#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code></a></p></td>
-<td><p>int([x]) -&gt; integer int(x, base=10) -&gt; integer</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT" title="gspread_helpers.range_name.validations.EXCEL_COL_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code></a></p></td>
+<td><p>Maximum number of columns for worksheets in Microsoft Excel.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<dl class="py data">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.validations.EXCEL_COL_LIMIT">
+<span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.validations.</span></span><span class="sig-name descname"><span class="pre">EXCEL_COL_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/validations.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum number of columns for worksheets in Microsoft Excel.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT">
+<span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.validations.</span></span><span class="sig-name descname"><span class="pre">EXCEL_ROW_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048576</span></em><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/validations.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum number of rows for worksheets in Microsoft Excel.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT">
+<span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.validations.</span></span><span class="sig-name descname"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18278</span></em><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/validations.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum number of columns for worksheets in Google Sheets.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT">
+<span class="sig-prename descclassname"><span class="pre">gspread_helpers.range_name.validations.</span></span><span class="sig-name descname"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10000000</span></em><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers/blob/main/gspread_helpers/range_name/validations.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT" title="Link to this definition">#</a></dt>
+<dd><p>Maximum number of rows for worksheets in Google Sheets.</p>
+</dd></dl>
+
 </section>
 
 
@@ -366,20 +405,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="range_name/gspread_helpers.range_name.range_name.RangeName.html"
+       href="gspread_helpers.range_name.range_name.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">gspread_helpers.range_name.range_name.RangeName</p>
+        <p class="prev-next-title">gspread_helpers.range_name.range_name</p>
       </div>
     </a>
     <a class="right-next"
-       href="range_name/gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT.html"
+       href="../../installation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT</p>
+        <p class="prev-next-title">Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -393,6 +432,21 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.validations.EXCEL_COL_LIMIT"><code class="docutils literal notranslate"><span class="pre">EXCEL_COL_LIMIT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.validations.EXCEL_ROW_LIMIT"><code class="docutils literal notranslate"><span class="pre">EXCEL_ROW_LIMIT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_COL_LIMIT"><code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_COL_LIMIT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gspread_helpers.range_name.validations.GOOGLE_SHEETS_ROW_LIMIT"><code class="docutils literal notranslate"><span class="pre">GOOGLE_SHEETS_ROW_LIMIT</span></code></a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

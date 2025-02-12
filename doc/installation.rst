@@ -3,7 +3,7 @@
 Installation
 ************
 
-To install `gspread-helpers <https://pypi.org/project/gspread-helpers/>`_ using `pip`:
+To install `gspread-helpers <https://pypi.org/project/gspread-helpers/>`_ using ``pip``:
 
 .. code-block:: bash
 

@@ -1,15 +1,5 @@
 """
 Configurable constants for controlling column and row limitations.
-
-.. currentmodule:: gspread_helpers.range_name.validations
-
-.. autosummary::
-    :toctree: range_name/
-
-    GOOGLE_SHEETS_ROW_LIMIT     Maximum number of rows for worksheets in Google Sheets.
-    EXCEL_ROW_LIMIT             Maximum number of rows for worksheets in Microsoft Excel.
-    GOOGLE_SHEETS_COL_LIMIT     Maximum number of columns for worksheets in Google Sheets.
-    EXCEL_COL_LIMIT             Maximum number of columns for worksheets in Microsoft Excel.
 """
 
 from __future__ import annotations
@@ -27,9 +17,16 @@ from attrs import Attribute
 
 from .exceptions import ColumnLimitExceeded, RowLimitExceeded
 
+#: Maximum number of rows for worksheets in Google Sheets.
 GOOGLE_SHEETS_ROW_LIMIT: int = 10_000_000
+
+#: Maximum number of rows for worksheets in Microsoft Excel.
 EXCEL_ROW_LIMIT: int = 1_048_576
+
+#: Maximum number of columns for worksheets in Google Sheets.
 GOOGLE_SHEETS_COL_LIMIT: int = 18_278
+
+#: Maximum number of columns for worksheets in Microsoft Excel.
 EXCEL_COL_LIMIT: int = 16_384
 
 

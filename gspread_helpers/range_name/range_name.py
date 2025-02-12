@@ -1,16 +1,8 @@
-"""
-Helper method for dynamically creating range names, i.e. 'A2:BR34'.
-
-.. currentmodule:: gspread_helpers.range_name.range_name
-
-.. autosummary::
-    :toctree: range_name/
-
-    RangeName
-"""
-
 from __future__ import annotations
 
+__doc__ = """
+Helper method for dynamically creating range names, i.e. 'A2:BR34'.
+"""
 __all__ = ["RangeName"]
 
 from typing import Union
@@ -83,6 +75,15 @@ class RangeName:
     ColumnLimitExceeded : Exception
         Raised if the cols argument exceeds the predetermined limit set by
         the GOOGLE_SHEETS_COL_LIMIT and EXCEL_COL_LIMIT constants.
+
+    See Also
+    --------
+    gspread_helpers.GOOGLE_SHEETS_ROW_LIMIT
+    gspread_helpers.EXCEL_ROW_LIMIT
+    gspread_helpers.GOOGLE_SHEETS_COL_LIMIT
+    gspread_helpers.EXCEL_COL_LIMIT
+    gspread_helpers.RowLimitExceeded
+    gspread_helpers.ColumnLimitExceeded
 
     Examples
     --------

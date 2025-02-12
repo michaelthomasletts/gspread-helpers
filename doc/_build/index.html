@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="./" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -30,7 +30,7 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -51,7 +51,7 @@
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -157,11 +157,33 @@
       
         <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+      
+        <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -236,11 +258,33 @@
         
           <div class="navbar-item">
 
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button></div>
+        
+          <div class="navbar-item">
+
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
   <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/michaelthomasletts/gspread-helpers" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -276,7 +320,15 @@
                   
   <section id="gspread-helpers">
 <h1>gspread-helpers<a class="headerlink" href="#gspread-helpers" title="Link to this heading">#</a></h1>
-<p>A simple Python package which provides supplementary helper methods for <a class="reference external" href="https://docs.gspread.org/en/latest/index.html">gspread</a>.</p>
+<p>A simple Python package which provides supplementary helper methods for
+<a class="reference external" href="https://docs.gspread.org/en/latest/index.html">gspread</a>.</p>
+<p>The raison d’être for this Python package is to provide a single repository
+for miscellaneous helper methods that aide engineers using <code class="docutils literal notranslate"><span class="pre">gspread</span></code> but
+which may not warrant addition to the official <code class="docutils literal notranslate"><span class="pre">gspread</span></code> project via pull
+request.</p>
+<p>Currently, this package includes a single module helper method–namely, <code class="docutils literal notranslate"><span class="pre">RangeName</span></code>.
+Additional methods and modules will be added on an ad hoc basis–that is, as
+the need arises.</p>
 <div class="toctree-wrapper compound">
 </div>
 <section id="information">
@@ -284,13 +336,6 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="reference/index.html"><span class="doc">API Reference</span></a></p></li>
 <li><p><a class="reference internal" href="installation.html"><span class="doc">Installation</span></a></p></li>
-</ul>
-</section>
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/gspread-helpers/">PyPI</a></p></li>
-<li><p><a class="reference external" href="https://github.com/michaelthomasletts/gspread-helpers">Github</a></p></li>
 </ul>
 </section>
 <section id="authors">
@@ -340,7 +385,6 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information">Information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
 </ul>
   </nav></div>

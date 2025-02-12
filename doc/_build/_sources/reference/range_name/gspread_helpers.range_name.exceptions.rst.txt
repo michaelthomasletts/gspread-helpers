@@ -1,4 +1,4 @@
-﻿gspread\_helpers.range\_name.exceptions
+gspread\_helpers.range\_name.exceptions
 =======================================
 
 .. automodule:: gspread_helpers.range_name.exceptions
